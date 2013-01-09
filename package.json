@@ -1,0 +1,16 @@
+{
+	"name": "mocha-html-cov-reporter", 
+	"version": "1.0.2", 
+	"description": "simple, flexible, fun test framework", 
+	"keywords": ["html-cov", "mocha", "test", "bdd", "tdd", "tap"], 
+	"author": "Shawn Jonnet <sjonnet19@gmail.com>", 
+	"repository": { "type": "git", "url": "git://github.com/sjonnet19/mocha-html-cov-reporter.git" }, 
+	"dependencies": {
+	  "jade": "0.x.x",
+	  "mocha": "1.x.x"
+	},
+	"bin": {
+		"html-cov": "./bin/html-cov"
+	},
+	"engines": { "node": ">= 0.4.x" }
+}

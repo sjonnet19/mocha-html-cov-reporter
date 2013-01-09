@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+/**
+ * HTMLCov
+ */
+
+var jade = require('jade'),
+fs = require('fs'),
+
+coverageClass = function(n) {
+	if (n >= 75) return 'high';
+	if (n >= 50) return 'medium';
+	if (n >= 25) return 'low';
+	return 'terrible'
+}
+
+var file = __dirname + '/../lib/reporters/templates/coverage.jade', 
+str = fs.readFileSync(file, 'utf8'), 
+fn = jade.compile(str, { filename: file }),
+cov = JSON.parse(fs.readFileSync('/dev/stdin').toString())
+
+process.stdout.write(fn({
+	cov: cov,
+	coverageClass: coverageClass
+}))
